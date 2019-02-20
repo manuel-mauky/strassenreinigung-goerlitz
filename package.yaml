@@ -1,0 +1,43 @@
+name:                strassenreinigung-goerlitz
+version:             0.1.0.0
+github:              "lestard/strassenreinigung-goerlitz"
+license:             BSD3
+author:              "Manuel Mauky"
+maintainer:          "manuel.mauky@gmail.com"
+copyright:           "Manuel Mauky 2018"
+
+extra-source-files:
+- README.md
+
+
+dependencies:
+- base >= 4.7 && < 5
+- hxt
+- hxt-curl
+- HandsomeSoup
+- text
+
+library:
+  source-dirs: src
+
+executables:
+  strassenreinigung-goerlitz-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - strassenreinigung-goerlitz
+
+tests:
+  strassenreinigung-goerlitz-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+      - strassenreinigung-goerlitz
