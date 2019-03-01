@@ -16,6 +16,8 @@ dependencies:
 - hxt-curl
 - HandsomeSoup
 - text
+- time
+- parsers
 
 library:
   source-dirs: src

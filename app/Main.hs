@@ -2,7 +2,13 @@ module Main where
 
   import Scrape
 
+  import Types
+
+  showTmp :: (Street, CleaningDate) -> String
+  showTmp (street, cleaningDate) = (name street) ++ " -> " ++ show (date cleaningDate)
+
   main :: IO ()
   main = do
-    dates <- extractValues "test/simplified.html"
-    mapM_ putStrLn dates
+    values <- loadData "test/simplified.html"
+
+    mapM_ (putStrLn . showTmp) values

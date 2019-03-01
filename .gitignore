@@ -1,3 +1,6 @@
 .stack-work/
 strassenreinigung-goerlitz.cabal
 *~
+
+.idea/
+*.iml
